@@ -8,7 +8,7 @@
 */
 {
   // Name your instance!
-  "title": "Etherpad",
+  "title": "NumeriPad",
 
   // favicon default name
   // alternatively, set up a fully specified Url to your own favicon
@@ -35,25 +35,18 @@
 
   //The Type of the database. You can choose between dirty, postgres, sqlite and mysql
   //You shouldn't use "dirty" for for anything else than testing or development
-  "dbType" : "dirty",
-  //the database specific settings
-  "dbSettings" : {
-                   "filename" : "var/dirty.db"
-                 },
 
-  /* An Example of MySQL Configuration
    "dbType" : "mysql",
    "dbSettings" : {
-                    "user"    : "root",
-                    "host"    : "localhost",
-                    "password": "",
+                    "user"    : "$MYSQL_DB_USER",
+                    "host"    : "$MYSQL_DB_HOST",
+                    "password": "$MYSQL_DB_PASSWORD",
                     "database": "store",
                     "charset" : "utf8mb4"
                   },
-  */
 
   //the default text of a pad
-  "defaultPadText" : "Welcome to Etherpad!\n\nThis pad text is synchronized as you type, so that everyone viewing this page sees the same text. This allows you to collaborate seamlessly on documents!\n\nGet involved with Etherpad at http:\/\/etherpad.org\n",
+  "defaultPadText" : "¡Bienvenida a Etherpad!\n\nEscritura colaborativa en sintonía, se sincroniza de modo que todxs quienes estan en la página están editando el mismo texto. NO registramos su IP.",
 
   /* Default Pad behavior, users can override by changing */
   "padOptions": {
@@ -116,22 +109,18 @@
   "trustProxy" : false,
 
   /* Privacy: disable IP logging */
-  "disableIPlogging" : false,
+  "disableIPlogging" : true,
 
   /* Users for basic authentication. is_admin = true gives access to /admin.
      If you do not uncomment this, /admin will not be available! */
-  /*
+  
   "users": {
     "admin": {
-      "password": "changeme1",
+      "password": "$ADMIN_USER",
       "is_admin": true
     },
-    "user": {
-      "password": "changeme1",
-      "is_admin": false
-    }
   },
-  */
+  
 
   // restrict socket.io transport methods
   "socketTransportProtocols" : ["xhr-polling", "jsonp-polling", "htmlfile"],

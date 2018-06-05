@@ -31,7 +31,6 @@ RUN cd /opt && git clone https://github.com/ether/etherpad-lite.git etherpad
 RUN /opt/etherpad/bin/installDeps.sh
 
 # Add conf files
-ADD settings.json /opt/etherpad/settings.json
 ADD supervisor.conf /etc/supervisor/supervisor.conf
 
 EXPOSE 9001
