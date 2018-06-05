@@ -38,10 +38,10 @@
 
    "dbType" : "mysql",
    "dbSettings" : {
-                    "user"    : "$MYSQL_DB_USER",
-                    "host"    : "$MYSQL_DB_HOST",
-                    "password": "$MYSQL_DB_PASSWORD",
-                    "database": "store",
+                    "user"    : "$ETHER_DB_USER",
+                    "host"    : "$ETHER_DB_HOST",
+                    "password": "$ETHER_DB_PASSWORD",
+                    "database": "$ETHER_DB_NAME",
                     "charset" : "utf8mb4"
                   },
 
@@ -116,7 +116,7 @@
   
   "users": {
     "admin": {
-      "password": "$ADMIN_USER",
+      "password": "$ETHER_ADMIN_PASSWORD",
       "is_admin": true
     },
   },

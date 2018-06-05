@@ -31,7 +31,13 @@ RUN cd /opt && git clone https://github.com/ether/etherpad-lite.git etherpad
 RUN /opt/etherpad/bin/installDeps.sh
 
 # Add conf files
+ADD settings.json /opt/etherpad/settings.json
 ADD supervisor.conf /etc/supervisor/supervisor.conf
+ADD docker-entrypoint.sh /opt/etherpad/docker-entrypoint.sh
+
+RUN chmod +x /opt/etherpad/docker-entrypoint.sh
 
 EXPOSE 9001
-CMD ["supervisord", "-c", "/etc/supervisor/supervisor.conf", "-n"]
+
+WORKDIR /opt/etherpad/
+ENTRYPOINT ["./docker-entrypoint.sh"]
